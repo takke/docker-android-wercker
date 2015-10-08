@@ -36,6 +36,8 @@ RUN cd /usr/local/ && curl -L -O http://dl.google.com/android/android-sdk_r24.3.
 # Install Android tools
 RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter tools --no-ui --force -a
 RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter platform-tools --no-ui --force -a
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter build-tools-23.0.1 --no-ui --force -a
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-23 --no-ui --force -a
 #RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-18 --no-ui --force -a
 #RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-19 --no-ui --force -a
 #RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter extra --no-ui --force -a
@@ -50,14 +52,14 @@ RUN cd /usr/local/ && curl -L -O https://www.apache.org/dist/ant/binaries/apache
 # RUN cd /usr/local/ && curl -L -O http://ftp.tsukuba.wide.ad.jp/software/apache/maven/maven-3/3.1.1/binaries/apache-maven-3.1.1-bin.tar.gz && tar xf apache-maven-3.1.1-bin.tar.gz
 
 # Install Gradle
-RUN cd /usr/local/ && curl -L -O http://services.gradle.org/distributions/gradle-1.9-all.zip && unzip -o gradle-1.9-all.zip
+RUN cd /usr/local/ && curl -L -O http://services.gradle.org/distributions/gradle-2.2.1-all.zip && unzip -o gradle-2.2.1-all.zip
 
 # Environment variables
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 #ENV ANDROID_NDK_HOME /usr/local/android-ndk-r9b
 ENV ANT_HOME /usr/local/apache-ant-1.9.2
 # ENV MAVEN_HOME /usr/local/apache-maven-3.1.1
-ENV GRADLE_HOME /usr/local/gradle-1.9
+ENV GRADLE_HOME /usr/local/gradle-2.2.1
 ENV PATH $PATH:$ANDROID_HOME/tools
 ENV PATH $PATH:$ANDROID_HOME/platform-tools
 #ENV PATH $PATH:$ANDROID_NDK_HOME
@@ -70,6 +72,6 @@ RUN rm -rf /usr/local/android-sdk_r24.3.4-linux.tgz
 RUN rm -rf /usr/local/android-ndk-r9b-linux-x86_64.tar.bz2
 RUN rm -rf /usr/local/apache-ant-1.9.2-bin.tar.gz
 RUN rm -rf /usr/local/apache-maven-3.1.1-bin.tar.gz
-RUN rm -rf /usr/local/gradle-1.9-all.zip
+RUN rm -rf /usr/local/gradle-2.2.1-all.zip
 RUN yum clean all
 

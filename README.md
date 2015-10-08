@@ -9,16 +9,16 @@ simple android environment for wercker
  * Android NDK r9b
  * Ant 1.9.5
  * Maven 3.1.1
- * Gradle 1.9
-
+ * Gradle 2.2.1
+ * Android Build Tools 23.0.1
 
 ### Docker Index pull
 
-    docker pull takke/docker-android-wercker
+    docker pull takke/android-wercker
 
 ### Run
 
-    docker run -i -t takke/docker-android-wercker /bin/bash
+    docker run -i -t takke/android-wercker /bin/bash
 
 ## Android SDK
 
@@ -43,4 +43,4 @@ simple android environment for wercker
 ## Gradle
 
     Version : 1.9
-    Install Location : /usr/local/gradle-1.9
+    Install Location : /usr/local/gradle-2.2.1
