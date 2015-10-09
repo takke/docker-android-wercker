@@ -1,8 +1,7 @@
 Dockerfile Android Development Environment
 ===========
 
-simple android environment for wercker 
-
+Android development environment for wercker 
 
  * OpenJDK 7
  * Android SDK r24.3.4

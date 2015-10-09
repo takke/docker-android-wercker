@@ -1,6 +1,3 @@
-# Version 1.0.2
-#  based on wasabeef/android
-
 FROM centos
 
 MAINTAINER takke <takke30@gmail.com>
@@ -30,17 +27,17 @@ RUN yum -y install libX11-devel.i686
 RUN yum -y install libXrender.i686
 
 # Install Android SDK
-#RUN cd /usr/local/ && curl -L -O http://dl.google.com/android/android-sdk_r22.3-linux.tgz && tar xf android-sdk_r22.3-linux.tgz
 RUN cd /usr/local/ && curl -L -O http://dl.google.com/android/android-sdk_r24.3.4-linux.tgz && tar xf android-sdk_r24.3.4-linux.tgz
 
 # Install Android tools
-RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter tools --no-ui --force -a
-RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter platform-tools --no-ui --force -a
-RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter build-tools-23.0.1 --no-ui --force -a
-RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-23 --no-ui --force -a
-#RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-18 --no-ui --force -a
-#RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter android-19 --no-ui --force -a
-#RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --filter extra --no-ui --force -a
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter tools 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter platform-tools 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter build-tools-23.0.1 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter android-23 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter android-19 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter extra 
+RUN echo y | /usr/local/android-sdk-linux/tools/android update sdk --no-ui --force -a --filter sys-img-armeabi-v7a-android-19 
+
 
 # Install Android NDK
 #RUN cd /usr/local && curl -L -O http://dl.google.com/android/ndk/android-ndk-r9b-linux-x86_64.tar.bz2 && tar xf android-ndk-r9b-linux-x86_64.tar.bz2
