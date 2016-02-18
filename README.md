@@ -4,9 +4,9 @@ Dockerfile Android Development Environment
 Android development environment for wercker 
 
  * OpenJDK 7
- * Android SDK r24.3.4
+ * Android SDK r24.4.1
  * Android NDK r9b
- * Ant 1.9.5
+ * Ant 1.9.6
  * Maven 3.1.1
  * Gradle 2.2.1
  * Android Build Tools 23.0.1
@@ -21,7 +21,7 @@ Android development environment for wercker
 
 ## Android SDK
 
-    Version : r24.3.4
+    Version : r24.4.1
     Install Location : /usr/local/android-sdk-linux
     
 ## Android NDK
@@ -31,8 +31,8 @@ Android development environment for wercker
 
 ## Apache Ant
 
-    Version : 1.9.5
-    Install Location : /usr/local/apache-ant-1.9.5
+    Version : 1.9.6
+    Install Location : /usr/local/apache-ant-1.9.6
 
 ## Apache Maven
 
