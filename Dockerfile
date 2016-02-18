@@ -52,6 +52,7 @@ RUN cd /usr/local/ && curl -L -O https://www.apache.org/dist/ant/binaries/apache
 RUN cd /usr/local/ && curl -L -O http://services.gradle.org/distributions/gradle-2.2.1-all.zip && unzip -o gradle-2.2.1-all.zip
 
 # Environment variables
+ENV JAVA_HOME /usr/bin/java
 ENV ANDROID_HOME /usr/local/android-sdk-linux
 #ENV ANDROID_NDK_HOME /usr/local/android-ndk-r9b
 ENV ANT_HOME /usr/local/apache-ant-1.9.6
